@@ -1,5 +1,4 @@
-/* Estilos generales */
-/* Estilos generales */
+/* Estilos generales *//* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -66,9 +65,6 @@ nav ul li a.active {
     background-color: #555;
 }
 
-/* ... resto del código ... */
-
-
 main {
     padding: 2rem;
     flex-grow: 1;
@@ -82,7 +78,63 @@ footer {
     margin-top: auto;
 }
 
-/* Estilos específicos */
+.home {
+    text-align: center;
+}
+
+.cta-buttons {
+    margin-top: 1rem;
+}
+
+.cta-buttons .btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons .btn:hover {
+    background-color: #444;
+}
+
+.about {
+    margin-top: 2rem;
+}
+
+.about h2 {
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.about-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+
 .proyecto-container,
 .curso-container,
 .certificado-container {
@@ -97,9 +149,10 @@ footer {
     gap: 2rem;
 }
 .project-card img,
-.curso-card img {
+.curso-card img,
+.certificado-card img {
     width: 100%;
-    height: 200px;
+    max-height: 256px;
     object-fit: cover;
     box-shadow: 6px  rgba(0, 0, 0, 0.2);
 }
@@ -126,7 +179,8 @@ footer {
     align-self: flex-end;
 }
 .proyecto-card,
-.curso-card {
+.curso-card,
+.certificado-card {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 1rem;
@@ -139,11 +193,7 @@ footer {
     box-shadow: 1px 1px 1px 1px rgba(32,32,32,0.3)
 }
 
-.certificado-container img {
-    max-width: 300px;
-    height: auto;
-    margin: 1rem;
-}
+
 
 form {
     max-width: 500px;

@@ -1,130 +1,204 @@
-// Función para crear tarjetas de proyectos
-function createProjectCards() {
-    const proyectoContainer = document.querySelector('.proyecto-container');
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar EmailJS
+    emailjs.init("dlm-cxzgYUtLLIgHw");
 
-    // Datos de ejemplo de los proyectos
-    const proyectos = [
-        {
-            imagen: 'CITAS.png',
-            titulo: 'Agregar citas',
-            link: 'https://ilanaver.github.io/Tp03_EFSI/',
-            descripcion: 'Es una pagina en la que podes agregar citas.'
-        },
-        {
-            imagen: 'TODO.png',
-            titulo: 'Lista To Do',
-            link: 'https://ilanaver.github.io/TP5_EFSI/',
-            descripcion: 'Una pagina en la que podes agregar tareas que vayas teniendo.'
-        },
-        {
-            imagen: 'Preguntados.png',
-            titulo: 'Preguntados',
-            link: 'https://ilanaver.github.io/Preguntados/',
-            descripcion: 'Un preguntados en la compu.'
-        },
-        {
-            imagen: 'River.png',
-            titulo: 'Museo de River',
-            link: 'https://ilanaver.github.io/Tp3_Arte/',
-            descripcion: 'Un preguntados en la compu.'
-        },
-        // Agrega más proyectos aquí
-    ];
+    function createProjectCards() {
+        const proyectoContainer = document.querySelector('.proyecto-container');
+        if (!proyectoContainer) {
+            console.error("El contenedor de proyectos no se encontró.");
+            return;
+        }
 
-    proyectos.forEach(proyecto => {
-        const tarjeta = document.createElement('div');
-        tarjeta.classList.add('proyecto-card');
+        const proyectos = [
+            {
+                imagen: 'img/CITAS.png',
+                titulo: 'Agregar citas',
+                link: 'https://ilanaver.github.io/Tp03_EFSI/',
+                descripcion: 'Es una pagina en la que podes agregar citas.'
+            },
+            {
+                imagen: 'img/TODO.png',
+                titulo: 'Lista To Do',
+                link: 'https://ilanaver.github.io/TP5_EFSI/',
+                descripcion: 'Una pagina en la que podes agregar tareas que vayas teniendo.'
+            },
+            {
+                imagen: 'img/Preguntados.png',
+                titulo: 'Preguntados',
+                link: 'https://ilanaver.github.io/Preguntados/',
+                descripcion: 'Un preguntados en la compu.'
+            },
+            {
+                imagen: 'img/River.png',
+                titulo: 'Museo de River',
+                link: 'https://ilanaver.github.io/Tp3_Arte/',
+                descripcion: 'Un preguntados en la compu.'
+            }
+        ];
 
-        const imagen = document.createElement('img');
-        imagen.src = proyecto.imagen;
-        imagen.alt = proyecto.titulo;
-        imagen.className = 'imagen-card';
+        proyectos.forEach(proyecto => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('proyecto-card');
 
-        const titulo = document.createElement('h3');
-        titulo.textContent = proyecto.titulo;
+            const imagen = document.createElement('img');
+            imagen.src = proyecto.imagen;
+            imagen.alt = proyecto.titulo;
+            imagen.className = 'imagen-card';
 
-        const link = document.createElement('a');
-        link.href = proyecto.link;
-        link.textContent = 'Ver proyecto';
+            const titulo = document.createElement('h3');
+            titulo.textContent = proyecto.titulo;
 
-        const descripcion = document.createElement('p');
-        descripcion.textContent = proyecto.descripcion;
+            const link = document.createElement('a');
+            link.href = proyecto.link;
+            link.textContent = 'Ver proyecto';
 
-        tarjeta.appendChild(imagen);
-        tarjeta.appendChild(titulo);
-        tarjeta.appendChild(link);
-        tarjeta.appendChild(descripcion);
+            const descripcion = document.createElement('p');
+            descripcion.textContent = proyecto.descripcion;
 
-        proyectoContainer.appendChild(tarjeta);
-    });
-}
+            tarjeta.appendChild(imagen);
+            tarjeta.appendChild(titulo);
+            tarjeta.appendChild(link);
+            tarjeta.appendChild(descripcion);
 
-// Función para crear tarjetas de cursos
-function createCourseCards() {
-    const cursoContainer = document.querySelector('.curso-container');
+            proyectoContainer.appendChild(tarjeta);
+        });
+    }
 
-    // Datos de ejemplo de los cursos
-    const cursos = [
-        {
-            imagen: 'curso1.jpg',
-            titulo: 'Curso 1',
-            link: 'https://ejemplo.com/curso1',
-            descripcion: 'Descripción del Curso 1'
-        },
-        {
-            imagen: 'curso2.jpg',
-            titulo: 'Curso 2',
-            link: 'https://ejemplo.com/curso2',
-            descripcion: 'Descripción del Curso 2'
-        },
-        // Agrega más cursos aquí
-    ];
+    function createCourseCards() {
+        const cursoContainer = document.querySelector('.curso-container');
+        if (!cursoContainer) {
+            console.error("El contenedor de cursos no se encontró.");
+            return;
+        }
 
-    cursos.forEach(curso => {
-        const tarjeta = document.createElement('div');
-        tarjeta.classList.add('curso-card');
+        const cursos = [
+            {
+                videoId: 'nKPbfIU442g&t',  
+                videosrc: 'https://www.youtube.com/embed/nKPbfIU442g?si=JNZy8CXQXxa08Jq5',// Aquí colocas el ID del video de YouTube
+                titulo: 'Curso de Python desde CERO (completo)',
+                link: 'https://youtu.be/nKPbfIU442g?si=QEDYI8x0-BHFRgoa',
+                descripcion: 'Descripción del Curso 1'
+            },
+            {
+                videoId: 'ELSm-G201Ls&t',  // Aquí colocas el ID del video de YouTube
+                videosrc: 'https://www.youtube.com/embed/ELSm-G201Ls?si=aQwrcCsaXPZDfx0R',
+                titulo: 'Curso de HTML y CSS desde CERO (Completo)',
+                link: 'https://www.youtube.com/embed/ELSm-G201Ls?si=Hj8GrIcZ5VsiZcYj',
+                descripcion: 'Descripción del Curso 2'
+            }
+            // Agrega más cursos aquí si es necesario
+        ];
 
-        const imagen = document.createElement('img');
-        imagen.src = curso.imagen;
-        imagen.alt = curso.titulo;
+        cursos.forEach(curso => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('curso-card');
 
-        const titulo = document.createElement('h3');
-        titulo.textContent = curso.titulo;
+            // Crear el iframe para el video de YouTube
+            const iframe = document.createElement('iframe');
+            iframe.width = '100%';
+            iframe.height = '200px';  // Ajusta la altura según tus necesidades
+            iframe.src = curso.videosrc;
+            iframe.frameborder = 'none';
+            iframe.allowFullscreen = true;
 
-        const link = document.createElement('a');
-        link.href = curso.link;
-        link.textContent = 'Ver curso';
+            const titulo = document.createElement('h3');
+            titulo.textContent = curso.titulo;
 
-        const descripcion = document.createElement('p');
-        descripcion.textContent = curso.descripcion;
+            const link = document.createElement('a');
+            link.href = curso.link;
+            link.textContent = 'Ver curso';
 
-        tarjeta.appendChild(imagen);
-        tarjeta.appendChild(titulo);
-        tarjeta.appendChild(link);
-        tarjeta.appendChild(descripcion);
+            const descripcion = document.createElement('p');
+            descripcion.textContent = curso.descripcion;
 
-        cursoContainer.appendChild(tarjeta);
-    });
-}
+            tarjeta.appendChild(iframe);  // Agrega el iframe en lugar de la imagen
+            tarjeta.appendChild(titulo);
+            tarjeta.appendChild(link);
+            tarjeta.appendChild(descripcion);
 
-// Función para agregar eventos al formulario de contacto
-function setupContactForm() {
-    const form = document.querySelector('form');
+            cursoContainer.appendChild(tarjeta);
+        });
+    }
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+    function createCertificatesCards() {
+        const certificateContainer = document.querySelector('.certificado-container');
+        if (!certificateContainer) {
+            console.error("El contenedor de certificados no se encontró.");
+            return;
+        }
 
-        // Aquí puedes agregar la lógica para enviar el formulario
-        console.log('Formulario enviado');
+        const certificados = [
+            {
+                imagen: 'img/CITAS.png',
+                titulo: 'Agregar citas',
+                link: 'https://ilanaver.github.io/Tp03_EFSI/',
+                descripcion: 'Es una pagina en la que podes agregar citas.'
+            },
+            {
+                imagen: 'img/TODO.png',
+                titulo: 'Lista To Do',
+                link: 'https://ilanaver.github.io/TP5_EFSI/',
+                descripcion: 'Una pagina en la que podes agregar tareas que vayas teniendo.'
+            }
+        ];
 
-        // Limpiar el formulario
-        form.reset();
-    });
-}
+        certificados.forEach(certificado => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('certificado-card');
 
-// Llamar a las funciones cuando se cargue la página
-window.addEventListener('DOMContentLoaded', () => {
+            const imagen = document.createElement('img');
+            imagen.src = certificado.imagen;
+            imagen.alt = certificado.titulo;
+            imagen.className = 'imagen-card';
+
+            const titulo = document.createElement('h3');
+            titulo.textContent = certificado.titulo;
+
+            const link = document.createElement('a');
+            link.href = certificado.link;
+            link.textContent = 'Ver proyecto';
+
+            const descripcion = document.createElement('p');
+            descripcion.textContent = certificado.descripcion;
+
+            tarjeta.appendChild(imagen);
+            tarjeta.appendChild(titulo);
+            tarjeta.appendChild(link);
+            tarjeta.appendChild(descripcion);
+
+            certificateContainer.appendChild(tarjeta);
+        });
+    }
+
+    function setupContactForm() {
+        const form = document.getElementById('contact-form');
+        if (!form) {
+            console.error("El formulario de contacto no se encontró.");
+            return;
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            document.getElementById('contact_number').value = Math.random() * 100000 | 0;
+
+            const serviceID = 'service_r6tpjzs';
+            const templateID = 'template_7bk6e0y';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(function() {
+                    console.log('Formulario enviado correctamente!');
+                    alert('Formulario enviado correctamente!');
+                    form.reset();
+                }, function(error) {
+                    console.error('Error al enviar el formulario:', error);
+                    alert('Hubo un problema al enviar el formulario.');
+                });
+        });
+    }
+
     createProjectCards();
     createCourseCards();
+    createCertificatesCards();
     setupContactForm();
 });
