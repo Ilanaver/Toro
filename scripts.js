@@ -120,25 +120,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function createCertificatesCards() {
-        const certificateContainer = document.querySelector('.certificado-container');
-        if (!certificateContainer) {
+    function createCertificateCards() {
+        const certificadoContainer = document.querySelector('.certificado-container');
+        if (!certificadoContainer) {
             console.error("El contenedor de certificados no se encontró.");
             return;
         }
 
         const certificados = [
             {
-                imagen: 'img/CITAS.png',
-                titulo: 'Agregar citas',
-                link: 'https://ilanaver.github.io/Tp03_EFSI/',
-                descripcion: 'Es una pagina en la que podes agregar citas.'
+                imagen: 'img/certificado1.png',
+                titulo: 'Certificado 1',
+                descripcion: 'Descripción del certificado 1.'
             },
             {
-                imagen: 'img/TODO.png',
-                titulo: 'Lista To Do',
-                link: 'https://ilanaver.github.io/TP5_EFSI/',
-                descripcion: 'Una pagina en la que podes agregar tareas que vayas teniendo.'
+                imagen: 'img/certificado2.png',
+                titulo: 'Certificado 2',
+                descripcion: 'Descripción del certificado 2.'
+            },
+            {
+                imagen: 'img/certificado3.png',
+                titulo: 'Certificado 3',
+                descripcion: 'Descripción del certificado 3.'
             }
         ];
 
@@ -154,51 +157,49 @@ document.addEventListener('DOMContentLoaded', function() {
             const titulo = document.createElement('h3');
             titulo.textContent = certificado.titulo;
 
-            const link = document.createElement('a');
-            link.href = certificado.link;
-            link.textContent = 'Ver proyecto';
-
             const descripcion = document.createElement('p');
             descripcion.textContent = certificado.descripcion;
 
             tarjeta.appendChild(imagen);
             tarjeta.appendChild(titulo);
-            tarjeta.appendChild(link);
             tarjeta.appendChild(descripcion);
 
-            certificateContainer.appendChild(tarjeta);
-        });
-    }
-
-    function setupContactForm() {
-        const form = document.getElementById('contact-form');
-        if (!form) {
-            console.error("El formulario de contacto no se encontró.");
-            return;
-        }
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            document.getElementById('contact_number').value = Math.random() * 100000 | 0;
-
-            const serviceID = 'service_r6tpjzs';
-            const templateID = 'template_7bk6e0y';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(function() {
-                    console.log('Formulario enviado correctamente!');
-                    alert('Formulario enviado correctamente!');
-                    form.reset();
-                }, function(error) {
-                    console.error('Error al enviar el formulario:', error);
-                    alert('Hubo un problema al enviar el formulario.');
-                });
+            certificadoContainer.appendChild(tarjeta);
         });
     }
 
     createProjectCards();
     createCourseCards();
-    createCertificatesCards();
-    setupContactForm();
+    createCertificateCards();
+
+    const form = document.querySelector("form");
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var templateParams = {
+                from_name: document.querySelector("input[name='name']").value,
+                message: document.querySelector("textarea[name='message']").value,
+                reply_to: document.querySelector("input[name='email']").value,
+            };
+
+            emailjs.send('service_qd6hgx2', 'template_7baqhul', templateParams)
+                .then(function(response) {
+                    console.log('Correo enviado con éxito:', response.status, response.text);
+                    alert("Correo enviado con éxito.");
+                    form.reset();
+                }, function(error) {
+                    console.log('Error al enviar el correo:', error);
+                    alert("Hubo un error al enviar el correo. Por favor, intenta nuevamente.");
+                });
+        });
+    }
+
+    // Manejo del menú móvil
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
 });
