@@ -178,12 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             var templateParams = {
-                from_name: document.querySelector("input[name='name']").value,
-                message: document.querySelector("textarea[name='message']").value,
+                from_name: document.querySelector("input[name='nombre']").value,
+                message: document.querySelector("textarea[name='mensaje']").value,
                 reply_to: document.querySelector("input[name='email']").value,
             };
 
-            emailjs.send('service_qd6hgx2', 'template_7baqhul', templateParams)
+            emailjs.send('service_r6tpjzs', 'template_7bk6e0y', templateParams)
                 .then(function(response) {
                     console.log('Correo enviado con éxito:', response.status, response.text);
                     alert("Correo enviado con éxito.");
@@ -202,4 +202,31 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.addEventListener('click', function() {
         navLinks.classList.toggle('show');
     });
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        const form = document.querySelector('form');
+    
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('show');
+            });
+        }
+    
+        if (form) {
+            form.addEventListener('submit', function(event) {
+                // Detectar si es un dispositivo móvil
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+                if (!isMobile) {
+                    alert('Formulario enviado');
+                }
+    
+                // Aquí puedes agregar el código para procesar el formulario
+                // Si no deseas que el formulario se envíe realmente, puedes prevenir el envío
+                // event.preventDefault();
+            });
+        }
+    });
+    
 });
