@@ -178,9 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             var templateParams = {
-                from_name: document.querySelector("input[name='nombre']").value,
-                message: document.querySelector("textarea[name='mensaje']").value,
-                reply_to: document.querySelector("input[name='email']").value,
+                nombre: document.querySelector("input[name='nombre']").value,
+                mensaje: document.querySelector("textarea[name='mensaje']").value,
+                email: document.querySelector("input[name='email']").value,
             };
 
             emailjs.send('service_r6tpjzs', 'template_7bk6e0y', templateParams)
