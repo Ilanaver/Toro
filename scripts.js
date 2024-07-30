@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const link = document.createElement('a');
             link.href = proyecto.link;
             link.textContent = 'Ver proyecto';
+            link.target = '_blank';
 
             const descripcion = document.createElement('p');
             descripcion.textContent = proyecto.descripcion;
@@ -107,6 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const link = document.createElement('a');
             link.href = curso.link;
             link.textContent = 'Ver curso';
+            link.target = '_blank';
+
 
             const descripcion = document.createElement('p');
             descripcion.textContent = curso.descripcion;
@@ -165,7 +168,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const link = document.createElement('a');
             link.href = certificado.link;
-            link.textContent = 'Ver curso';
+            link.textContent = 'Ver certificado';
+            link.target = '_blank';
+
 
             tarjeta.appendChild(imagen);
             tarjeta.appendChild(titulo);
