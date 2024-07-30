@@ -129,19 +129,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const certificados = [
             {
-                imagen: 'img/certificado1.png',
-                titulo: 'Certificado 1',
-                descripcion: 'Descripción del certificado 1.'
+                imagen: 'img/Certificado basico .png',
+                titulo: 'SQL (Basic)',
+                descripcion: 'Certificado de Hackerrank sobre SQL, nivel basico.',
+                link: 'https://www.hackerrank.com/certificates/eb3f56e950bf'
             },
             {
-                imagen: 'img/certificado2.png',
-                titulo: 'Certificado 2',
-                descripcion: 'Descripción del certificado 2.'
+                imagen: 'img/Intermedio.png',
+                titulo: 'SQL (Intermediate)',
+                descripcion: 'Certificado de Hackerrank sobre SQL, nivel intermedio.',
+                link: 'https://www.hackerrank.com/certificates/ad8d8f51b8f4'
             },
             {
-                imagen: 'img/certificado3.png',
-                titulo: 'Certificado 3',
-                descripcion: 'Descripción del certificado 3.'
+                imagen: 'img/Avanzado.png',
+                titulo: 'SQL (Advanced)',
+                descripcion: 'Certificado de Hackerrank sobre SQL, nivel avanzado.',
+                link: 'https://www.hackerrank.com/certificates/05bc7631e8eb'
             }
         ];
 
@@ -160,9 +163,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const descripcion = document.createElement('p');
             descripcion.textContent = certificado.descripcion;
 
+            const link = document.createElement('a');
+            link.href = certificado.link;
+            link.textContent = 'Ver curso';
+
             tarjeta.appendChild(imagen);
             tarjeta.appendChild(titulo);
             tarjeta.appendChild(descripcion);
+            tarjeta.appendChild(link);
 
             certificadoContainer.appendChild(tarjeta);
         });
