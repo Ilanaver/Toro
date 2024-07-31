@@ -66,14 +66,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 videosrc: 'https://www.youtube.com/embed/nKPbfIU442g?si=JNZy8CXQXxa08Jq5',// Aquí colocas el ID del video de YouTube
                 titulo: 'Curso de Python desde CERO (completo)',
                 link: 'https://youtu.be/nKPbfIU442g?si=QEDYI8x0-BHFRgoa',
-                descripcion: 'Descripción del Curso 1'
+//                descripcion: 'Descripción del Curso 1'
             },
             {
                 videoId: 'ELSm-G201Ls&t',  // Aquí colocas el ID del video de YouTube
                 videosrc: 'https://www.youtube.com/embed/ELSm-G201Ls?si=aQwrcCsaXPZDfx0R',
                 titulo: 'Curso de HTML y CSS desde CERO (Completo)',
                 link: 'https://www.youtube.com/embed/ELSm-G201Ls?si=Hj8GrIcZ5VsiZcYj',
-                descripcion: 'Descripción del Curso 2'
+  //              descripcion: 'Descripción del Curso 2'
             }
             // Agrega más cursos aquí si es necesario
         ];
