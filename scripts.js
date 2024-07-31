@@ -21,18 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 titulo: 'Lista To Do',
                 link: 'https://ilanaver.github.io/TP5_EFSI/',
                 descripcion: 'Una pagina en la que podes agregar tareas que vayas teniendo.'
-            },
-            {
-                imagen: 'img/Preguntados.png',
-                titulo: 'Preguntados',
-                link: 'https://ilanaver.github.io/Preguntados/',
-                descripcion: 'Un preguntados en la compu.'
-            },
-            {
-                imagen: 'img/River.png',
-                titulo: 'Museo de River',
-                link: 'https://ilanaver.github.io/Tp3_Arte/',
-                descripcion: 'Un preguntados en la compu.'
             }
         ];
 
