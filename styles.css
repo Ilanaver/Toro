@@ -204,7 +204,7 @@ footer {
 
 .imagen-card {
     width: 90%;
-    box-shadow: 1px 1px 1px 1px rgba(32, 32, 32, 0.3);
+    height: auto;
 }
 
 form {
@@ -224,6 +224,9 @@ form textarea {
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+.descripcion{
+    align-items: end;
 }
 
 form button {

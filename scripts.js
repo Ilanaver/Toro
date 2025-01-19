@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 titulo: 'Lista To Do',
                 link: 'https://ilanaver.github.io/TP5_EFSI/',
                 descripcion: 'Una pagina en la que podes agregar tareas que vayas teniendo.'
+            },
+            {
+                imagen: 'img/yutube.png',
+                titulo: 'YouTube copy',
+                link: 'https://you-tube-ivory.vercel.app/',
+                descripcion: 'Una pagina en la que podes agregar tareas que vayas teniendo.'
             }
         ];
 
@@ -43,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const descripcion = document.createElement('p');
             descripcion.textContent = proyecto.descripcion;
+            descripcion.className = 'descripcion';
+
 
             tarjeta.appendChild(imagen);
             tarjeta.appendChild(titulo);
